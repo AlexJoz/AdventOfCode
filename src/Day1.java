@@ -1,3 +1,11 @@
+import org.jetbrains.annotations.NotNull;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.function.BiFunction;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 /**
  * Created by A. Joz, 2015.
  * <p>
@@ -44,6 +52,7 @@ public class Day1 {
         System.out.println(countFloor(input));
         //part 2
         System.out.println(countChar(input));
+
     }
 
     private static int countChar(String input) {
@@ -65,13 +74,15 @@ public class Day1 {
         return santaChar;
     }
 
-    private static int countFloor(String input) {
-        int santaFloor = 0;
-        for (char c :
-                input.toCharArray()) {
-            if (c == '(') santaFloor++;
-            if (c == ')') santaFloor--;
-        }
-        return santaFloor;
+    @NotNull
+    private static Long countFloor(String input) {
+        return counter.apply(input, '(') - counter.apply(input, ')');
     }
+
+    // count matches of char c int string s
+    private static BiFunction<String, Character, Long> counter = (s, c) -> {
+        return IntStream.range(0, s.length())
+                .filter(i->s.charAt(i) == c)
+                .count();
+    };
 }
