@@ -1,10 +1,6 @@
 import org.jetbrains.annotations.NotNull;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.function.BiFunction;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /**
  * Created by A. Joz, 2015.

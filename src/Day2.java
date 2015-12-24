@@ -65,8 +65,7 @@ public class Day2 {
                 .sorted(Collections.reverseOrder())
                 .skip(1)
                 .reduce((a, b) -> a + b)
-                .get()
-                .intValue() * 2;
+                .get() * 2;
 
         // get product of dims
         int product = Arrays.asList(dims)
