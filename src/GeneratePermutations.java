@@ -1,32 +1,56 @@
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 /**
- * Recursively generates permutations for String arrays;
+ * Recursively generates permutations for String or int arrays;
  * Input: String[]
  * Output: ArrayList<String[]>
  *
  * @author Kushtrim
  * @author A. Joz
- * @version 2.00
+ * @version 2.1
  */
 
 public class GeneratePermutations {
     ArrayList<String> permutations;
 
+
     public GeneratePermutations(String[] arr) {
         this.permutations = generatePermutations(arr);
+    }
+
+    public GeneratePermutations(int[] arr) {
+        this.permutations = generateIntPermutations(arr);
+    }
+
+    private ArrayList<String> generateIntPermutations(int[] arr) {
+        String[] zu = new String[arr.length];
+        int k = 0;
+        for (int zi : arr) zu[k++] = Integer.toString(zi);
+        return generatePermutations(zu);
     }
 
     public ArrayList<String[]> getPerumutations() {
         ArrayList<String[]> list = new ArrayList<>();
         for (String s : permutations) {
-           list.add(s.split(" "));
+            list.add(s.split(" "));
+        }
+        return list;
+    }
+
+    public ArrayList<int[]> getIntPerumutations() {
+        ArrayList<int[]> list = new ArrayList<>();
+        for (String s : permutations) {
+            list.add(Stream.of(
+                    s.split(" "))
+                    .mapToInt(Integer::parseInt)
+                    .toArray());
         }
         return list;
     }
 
     private ArrayList<String> generatePermutations(String[] elements) {
-        ArrayList<String> permutations = new ArrayList<String>();
+        ArrayList<String> permutations = new ArrayList<>();
         if (elements.length == 2) {
 
             String x1 = elements[0] + " " + elements[1];
@@ -51,7 +75,6 @@ public class GeneratePermutations {
                 }
             }
         }
-
         return permutations;
     }
 }
