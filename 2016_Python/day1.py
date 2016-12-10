@@ -108,8 +108,7 @@ if __name__ == "__main__":
     print("Part1: {}".format(descrete_taxi.calc_dist()))
     print("Part2: {}".format(descrete_taxi.answer2))
 
-
-    """
+    '''
     --- Day 1: No Time for a Taxicab ---
 
 Santa's sleigh uses a very high-precision clock to guide its movements, and the clock's oscillator is regulated by stars. Unfortunately, the stars have been stolen... by the Easter Bunny. To save Christmas, Santa needs you to retrieve all fifty stars by December 25th.
@@ -140,4 +139,4 @@ For example, if your instructions are R8, R4, R4, R8, the first location you vis
 How many blocks away is the first location you visit twice?
 
 Your puzzle answer was 141.
-"""
+'''

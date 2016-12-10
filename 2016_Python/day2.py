@@ -17,7 +17,7 @@ keyb = [[1, 2, 3],
 
 curpos = (1, 1)
 path = []
-onelastnice = (5, 5)
+onelastnice = (1, 1)
 
 for a in my_input:
     for mov in a:
@@ -67,7 +67,7 @@ for a in my_input:
 print("Part2: {}".format("".join(str(a) for a in path2)))
 
 
-"""
+'''
 --- Day 2: Bathroom Security ---
 
 You arrive at Easter Bunny Headquarters under cover of darkness. However, you left in such a rush that you forgot to use the bathroom! Fancy office buildings like this one usually have keypad locks on their bathrooms, so you search the front desk for the code.
@@ -121,4 +121,4 @@ So, given the actual keypad layout, the code would be 5DB3.
 Using the same instructions in your puzzle input, what is the correct bathroom code?
 
 Your puzzle answer was 67BB9.
-"""
+'''
